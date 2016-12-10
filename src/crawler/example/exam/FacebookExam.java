@@ -24,9 +24,9 @@ public class FacebookExam {
 		// 遠端資料路徑
 
 		String uri = 
-				"https://graph.facebook.com/v2.6"
-				+ "/search?q="
-				+ "&access_token=";
+				"https://graph.facebook.com/v2.6/"
+				+ "crazyck101/posts?fields=id,link,message,created_time,reactions.limit(0).summary(total_count)&since=1480849200&until=1480856400"
+				+ "&access_token=EAACEdEose0cBANDyFU4ybpKLD5JrBpXeWIAzXdi6jpUgcEh9zi8PcADTfHquJr3jbBpXYGZBYsQDjznCAUeIqSQyzNi0mhZAwwIzKHiVmvfoYOa1Mf58m7GBBOXH9Qe2SS5kNnMGUpr8khg1R3acLgkxFoFFZAbstUDnmZBEYwZDZD";
 
 
 		Elements elems =
@@ -39,14 +39,21 @@ public class FacebookExam {
 		// 遂筆處理
 		for( Element data: elems ){
 			String id = data.select("id").text();
+			String link = data.select("link").text();
+			String message = data.select("message").text();
+			String reactions = data.select("reactions").text();
+
 
 			// FIXIT
-			String reactions = "";
 
 
-			output += id + "," + reactions + "\n";
+
+			output += id +","+link+"," +message+","+reactions + "\n";
+
+
 		}
 
 		System.out.println( output );
+
 	} 
 }
