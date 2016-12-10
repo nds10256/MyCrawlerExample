@@ -12,7 +12,7 @@ import org.apache.commons.logging.impl.SimpleLog;
 public class BasicExample {
 	// commit test
 	public static void main(String[] args) {
-
+// input20
 		// set to debug level
 		//CrawlerPack.setLoggerLevel(SimpleLog.LOG_LEVEL_DEBUG);
 
